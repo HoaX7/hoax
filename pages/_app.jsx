@@ -1,8 +1,9 @@
-// import App from "next/app";
+import App from "next/app";
 import "../public/css/index.css";
-import React, { Fragment, Component } from "react";
+import React, { Fragment } from "react";
+import withReact from "../store/withReact";
 
-class Portfolio extends Component {
+class Portfolio extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
     if (Component.getInitialProps) {
@@ -23,4 +24,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default withReact(Portfolio);
